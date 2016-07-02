@@ -20,6 +20,7 @@ func New(dampening float32, delay time.Duration) *Node {
 		Dampening: dampening,
 	}
 }
+
 func (node *Node) Init(format realaudio.Format) error {
 	if format.ChannelCount != 2 {
 		return errors.New("cannot handle non-stereo")
@@ -29,6 +30,7 @@ func (node *Node) Init(format realaudio.Format) error {
 	node.buffer = make([]float32, size*2)
 	return nil
 }
+
 func (node *Node) Render(buffer []float32) error {
 	index := node.index
 	hist := node.buffer
