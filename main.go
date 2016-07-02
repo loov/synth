@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"math"
 	"syscall"
@@ -55,6 +56,9 @@ func main() {
 			return realaudio.ErrDone
 		}
 		keys.Update()
+		if keys.Pressed('4') {
+			fmt.Println(synth)
+		}
 		for i, key := range Scale {
 			if keys.Pressed(byte(key)) {
 				freq := float32(220 * math.Exp2(1+float64(i)/12))
