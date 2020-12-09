@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"runtime"
 	"unsafe"
-
-	"github.com/ccherng/go-xaudio2"
 )
 
 const (
